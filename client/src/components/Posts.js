@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Header, Segment } from 'semantic-ui-react'
 
 export default function Posts() {
@@ -24,9 +25,7 @@ export default function Posts() {
               <Header as="h2">{ post.title }</Header>
               <Header size='small'>{ post.author }</Header>
               <p>{ post.content.slice(0, 200)}{ post.content.length > 200 && "..."}</p>
-              { post.content.length > 200 && (
-                <a href="#">Read More</a>
-              )}
+              <Link to={`/post/${post.id}`}>Read More</Link>
             </Segment>
           </div>
         }) }
