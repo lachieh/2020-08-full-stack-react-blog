@@ -31,8 +31,8 @@ export default function PostDetail() {
     <Header as="h1">{ post.title }</Header>
     <Segment vertical >
       <Header size='small'>Author: { post.author }</Header>
-      { post.content.split('\n').map(paragraph => {
-        return <p>{paragraph}</p>
+      { post.content.split('\n').map((paragraph, i) => {
+        return <p key={i}>{paragraph}</p>
       }) }
       <Link to="/">&larr; Back</Link>
     </Segment>
